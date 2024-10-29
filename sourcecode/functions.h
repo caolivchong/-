@@ -23,5 +23,6 @@ void matrMinus(matrix input1,matrix input2,matrix*output);
 //矩阵相乘
 void normMulti(matrix input1,matrix input2,matrix*output);
 void strassen(matrix input1,matrix input2,matrix*output);
+void c_w(matrix input1, matrix input2,matrix*output);
 
 # endif
