@@ -21,6 +21,14 @@ int main()
     // scanMatr(&A);
     // scanMatr(&B);
 
+    putchar('A');
+    putchar('\n');
+    printMatr(A);
+
+    putchar('B');
+    putchar('\n');
+    printMatr(B);
+
     clock_t start1,end1;
     double time_used1;
     start1 = time(NULL);
@@ -35,14 +43,6 @@ int main()
     end2 =time(NULL);
     time_used2 = difftime(end2,start2);
 
-
-    putchar('A');
-    putchar('\n');
-    printMatr(A);
-
-    putchar('B');
-    putchar('\n');
-    printMatr(B);
 
     printf("c_w for %lf ms :\n",time_used1);
     printMatr(C1);
