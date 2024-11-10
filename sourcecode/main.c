@@ -3,7 +3,7 @@
 # include <time.h>
 int main()
 {
-    int r;
+    int r, i, j;
     printf("Input the number of the row of matrix A:");
     scanf("%d",&r);
 
@@ -12,14 +12,19 @@ int main()
     initialMatr(&B);
     initialMatr(&C1);
     initialMatr(&C2);
-    
-    scanMatr(&A);
-    scanMatr(&B);
+    for (i = 0; i < r; i ++)
+        for (j = 0; j < r; j ++)
+            A.content[i][j] = (r + j) / 5;
+    for (i = 0; i < r; i ++)
+        for (j = 0; j < r; j ++)
+            B.content[i][j] = (r + j) / 6;
+    // scanMatr(&A);
+    // scanMatr(&B);
 
     clock_t start1,end1;
     double time_used1;
     start1 = time(NULL);
-    strassen(A,B,&C1);
+    c_w(A,B,&C1);
     end1 =time(NULL);
     time_used1 = difftime(end1,start1);
 
@@ -31,10 +36,17 @@ int main()
     time_used2 = difftime(end2,start2);
 
 
+    putchar('A');
+    putchar('\n');
+    printMatr(A);
 
-    printf("strassen for %lf ms :",time_used1);
+    putchar('B');
+    putchar('\n');
+    printMatr(B);
+
+    printf("c_w for %lf ms :\n",time_used1);
     printMatr(C1);
-    printf("strassen for %lf ms :",time_used2);
+    printf("norm for %lf ms :\n",time_used2);
     printMatr(C2);
 
     freeMatr(A);
@@ -53,12 +65,5 @@ int main()
     end =time(NULL);
 
     time_used = difftime(end,start);
-
-*/
-
-
-/*
-    
-
 
 */

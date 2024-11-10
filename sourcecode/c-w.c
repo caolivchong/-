@@ -52,21 +52,21 @@ void c_w(matrix input1, matrix input2,matrix*output)
     matrMinus(T2,B21,&T4);
 
     //计算七个乘法
-    if(r < 32){    //当阶数小于32时使用普通算法
-        normMulti(A11,B11,&A11);//R1
-            freeMatr(B11);
-        normMulti(A12,B21,&A12);//R2
-            freeMatr(B21);
-        normMulti(S4,B22,&S4);//R3
-            freeMatr(B22);
-        normMulti(A22,T4,&T4);//R4
-            freeMatr(A22);
-        normMulti(S1,B12,&S1);//R5
-            freeMatr(B12);
-        normMulti(S2,T2,&S2);//R6
-            freeMatr(T2);
-        normMulti(A21,T3,&T3);//R7
-    }else{
+    // if(r < 32){    //当阶数小于32时使用普通算法
+    //     normMulti(A11,B11,&A11);//R1
+    //         freeMatr(B11);
+    //     normMulti(A12,B21,&A12);//R2
+    //         freeMatr(B21);
+    //     normMulti(S4,B22,&S4);//R3
+    //         freeMatr(B22);
+    //     normMulti(A22,T4,&T4);//R4
+    //         freeMatr(A22);
+    //     normMulti(S1,B12,&S1);//R5
+    //         freeMatr(B12);
+    //     normMulti(S2,T2,&S2);//R6
+    //         freeMatr(T2);
+    //     normMulti(A21,T3,&T3);//R7
+    // }else{
         c_w(A11,B11,&A11);
             freeMatr(B11);
         c_w(A12,B21,&A12);
@@ -80,7 +80,7 @@ void c_w(matrix input1, matrix input2,matrix*output)
         c_w(S2,T2,&S2);
             freeMatr(T2);
         c_w(A21,T3,&T3);
-    }
+    //}
     
     //7步相加减得到AB的四块
     matrPlus(A11,A12,&A12);//C1
