@@ -56,15 +56,15 @@ void strassen(matrix input1, matrix input2,matrix*output)
     matrPlus(B21,B22,&B21);
 
     //计算七个乘法
-    if(r < 32){    //当阶数小于32时使用普通算法
-        normMulti(P5,P6,&P5);
-        normMulti(P7,B11,&B11);
-        normMulti(A11,P8,&A11);
-        normMulti(A22,P9,&A22);
-        normMulti(B22,P10,&B22);
-        normMulti(A21,B12,&P6);
-        normMulti(A12,B21,&A21);
-    }else{
+    // if(r < 32){    //当阶数小于32时使用普通算法
+    //     normMulti(P5,P6,&P5);
+    //     normMulti(P7,B11,&B11);
+    //     normMulti(A11,P8,&A11);
+    //     normMulti(A22,P9,&A22);
+    //     normMulti(B22,P10,&B22);
+    //     normMulti(A21,B12,&P6);
+    //     normMulti(A12,B21,&A21);
+    // }else{
         strassen(P5,P6,&P5);//I
         strassen(P7,B11,&B11);//II
         strassen(A11,P8,&A11);//III
@@ -72,7 +72,7 @@ void strassen(matrix input1, matrix input2,matrix*output)
         strassen(B22,P10,&B22);//V
         strassen(A21,B12,&P6);//VI
         strassen(A12,B21,&A21);//VII
-    }
+    //}
 
     //相加减得到AB的四块
     //C11
